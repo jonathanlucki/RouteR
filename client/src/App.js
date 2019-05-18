@@ -9,8 +9,11 @@ class App extends React.Component {
     constructor(props) {
         //set props
         super(props);
-        //set view to default 'input' screen
-        this.state = {view: 'input'};
+        //set up state to default
+        this.state = {view: 'input',
+                      start: '',
+                      points: [''],
+                      end: ''};
     }
 
     //component render method
