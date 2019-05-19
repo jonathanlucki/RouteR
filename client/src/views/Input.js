@@ -9,7 +9,7 @@ class Input extends React.Component {
     //component render method
     render() {
         return (
-            <Paper className="input-container" elevation={1}>
+            <Paper className="input-container" elevation={5}>
                 <Typography variant="h1">RouteR</Typography>
                 <Typography variant="subtitle1" gutterBottom>
                     By <a href="https://www.jonathanlucki.ca">Jonathan Lucki</a>
