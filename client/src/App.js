@@ -11,9 +11,16 @@ class App extends React.Component {
         super(props);
         //set up state to default
         this.state = {view: 'input',
-                      start: '',
-                      points: [''],
-                      end: ''};
+                      locations: {start: '',
+                                  end: '',
+                                  points: ['','','','','','']}};
+        //bind methods
+        this.handleLocationChange = this.handleLocationChange.bind(this);
+    }
+
+    //handles point change
+    handleLocationChange(locations) {
+        this.setState({locations});
     }
 
     //component render method
@@ -21,7 +28,7 @@ class App extends React.Component {
         //get page according to current view state
         switch(this.state.view) {
             case 'input':
-                var page = <Input />;
+                var page = <Input locations={this.state.locations} onLocationChange={this.handleLocationChange}/>;
                 break;
             case 'loading':
 

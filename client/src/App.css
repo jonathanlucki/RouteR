@@ -1,7 +1,7 @@
 .input-container {
     max-width: 500px;
     margin: 50px auto 50px auto;
-    padding: 20px 20px 20px 20px;
+    padding: 30px 30px 30px 30px;
     text-align: center;
 }
 
@@ -12,4 +12,8 @@
         margin: 0 0 0 0;
         height: 100%;
     }
+}
+
+.input-form-element {
+    width: 100%;
 }

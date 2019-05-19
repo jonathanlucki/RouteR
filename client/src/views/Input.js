@@ -11,9 +11,17 @@ class Input extends React.Component {
         return (
             <Paper className="input-container" elevation={1}>
                 <Typography variant="h1">RouteR</Typography>
-                <Typography variant="subtitle1" gutterBottom>By <a href="https://www.jonathanlucki.ca">Jonathan Lucki</a></Typography>
+                <Typography variant="subtitle1" gutterBottom>
+                    By <a href="https://www.jonathanlucki.ca">Jonathan Lucki</a>
+                </Typography>
                 <Divider />
-                <InputForm />
+                <br />
+                <Typography variant="subtitle1" gutterBottom>
+                    Please input up to six locations below, and RouteR will automatically calculate and display the fastest routing between them.
+                </Typography>
+                <br />
+                <Divider />
+                <InputForm locations={this.props.locations} onLocationChange={this.props.onLocationChange}/>
             </Paper>
         );
     }
