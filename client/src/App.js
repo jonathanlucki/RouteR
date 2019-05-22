@@ -58,21 +58,22 @@ class App extends React.Component {
     //component render method
     render() {
         //get page according to current view state
+        var page = <Error />;
         switch(this.state.view) {
             case 'input':
-                var page = <Input locations={this.state.locations} onLocationChange={this.handleLocationChange} onSubmit={this.handleLocationSubmit}/>;
+                page = <Input locations={this.state.locations} onLocationChange={this.handleLocationChange} onSubmit={this.handleLocationSubmit}/>;
                 break;
             case 'loading':
-                var page = <Loading />;
+                page = <Loading />;
                 break;
             case 'map':
-                var page = <RouteMap route={this.state.route} />
+                page = <RouteMap route={this.state.route} />
                 break;
             case 'error':
-                var page = <Error />;
+                page = <Error />;
                 break;
             default:
-                var page = <Error />;
+                page = <Error />;
                 break;
         }
         //return rendering

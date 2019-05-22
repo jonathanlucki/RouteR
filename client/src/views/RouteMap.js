@@ -39,6 +39,8 @@ class RouteMap extends React.Component {
     render() {
         return (
             <iframe
+                title="map"
+                name="map"
                 style={{border: 0}}
                 width="100%"
                 height="100%"
