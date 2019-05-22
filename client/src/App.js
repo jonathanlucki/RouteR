@@ -45,7 +45,7 @@ class App extends React.Component {
             },
             body: JSON.stringify({locations: this.state.locations}),
         });
-        const result = await response.text();
+        const result = await response.json();
         if (result !== 'error') {
             this.setState({route: result});
             this.handleViewChange('map');

@@ -12,19 +12,27 @@ class RouteMap extends React.Component {
 
     //returns map url
     getMapUrl() {
-        var start = this.props.route[0].split(' ').join('+');
-        var points = '';
-        for (var i=1; i < (this.props.route.length - 1); i++) {
-            if (i !== 1) {
-                points = points + "|";
+        var start = this.props.route[0];
+        console.log(start);
+        start = start.split(' ').join('+');
+        if (this.props.route.length > 2) {
+            var points = '';
+            for (var i = 1; i < (this.props.route.length - 1); i++) {
+                if (i !== 1) {
+                    points = points + "|";
+                }
+                points = points + this.props.route[i];
             }
-            points = points + (this.props.route[i].split(' ').join('+'));
+            points = points.split(' ').join('+');
         }
-        var end = this.props.route[this.props.route.length - 1].split(' ').join('+');
+        var end = this.props.route[this.props.route.length - 1];
+        end = end.split(' ').join('+');
         var key = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
-
-        return "https://www.google.com/maps/embed/v1/directions?key="+key+"&origin="+start+"&destination="+end+"&waypoints="+points;
-
+        if (this.props.route.length > 2) {
+            return "https://www.google.com/maps/embed/v1/directions?key=" + key + "&origin=" + start + "&destination=" + end + "&waypoints=" + points;
+        } else {
+            return "https://www.google.com/maps/embed/v1/directions?key=" + key + "&origin=" + start + "&destination=" + end;
+        }
     }
 
     //component render method
