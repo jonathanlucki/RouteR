@@ -15,7 +15,7 @@
 
 # misc
 /client/.DS_Store
-/client/.env
+/client/.env.local
 /.env
 
 /client/npm-debug.log*

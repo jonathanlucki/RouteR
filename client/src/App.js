@@ -3,6 +3,7 @@ import './App.css';
 import Input from './views/Input.js';
 import Loading from './views/Loading.js';
 import Error from './views/Error.js';
+import RouteMap from './views/RouteMap.js';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 class App extends React.Component {
@@ -65,13 +66,13 @@ class App extends React.Component {
                 var page = <Loading />;
                 break;
             case 'map':
-
+                var page = <RouteMap route={this.state.route} />
                 break;
             case 'error':
                 var page = <Error />;
                 break;
             default:
-
+                var page = <Error />;
                 break;
         }
         //return rendering
