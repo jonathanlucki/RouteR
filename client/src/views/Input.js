@@ -17,11 +17,11 @@ class Input extends React.Component {
                 <Divider />
                 <br />
                 <Typography variant="subtitle1" gutterBottom>
-                    Please input up to six locations below, and RouteR will automatically calculate and display the fastest routing between them.
+                    Please input up to five locations below, and RouteR will automatically calculate and display the fastest routing between them.
                 </Typography>
                 <br />
                 <Divider />
-                <InputForm locations={this.props.locations} onLocationChange={this.props.onLocationChange}/>
+                <InputForm locations={this.props.locations} onLocationChange={this.props.onLocationChange} onSubmit={this.props.onSubmit}/>
             </Paper>
         );
     }

@@ -12,9 +12,9 @@ class InputForm extends React.Component {
         //set state
         this.state = {maxPoints: this.props.locations.points.length};
         //bind methods
-        this.handleSubmit = this.handleSubmit.bind(this);
         this.getPointFields = this.getPointFields.bind(this);
         this.getPointFieldsCount = this.getPointFieldsCount.bind(this);
+        this.validInput = this.validInput.bind(this);
     }
 
     //returns number of point fields to be displayed
@@ -50,15 +50,22 @@ class InputForm extends React.Component {
         return fields;
     }
 
-    //handles form submissions
-    handleSubmit(event) {
-
+    //returns true if required fields are filled or not
+    validInput() {
+        if (this.props.locations.start !== '') {
+            for (var i = 0; i < this.props.locations.points.length; i++) {
+                if (this.props.locations.points[i] !== '') {
+                    return true;
+                }
+            }
+        }
+        return false;
     }
 
     //component render method
     render() {
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form onSubmit={this.props.onSubmit}>
                 <FormGroup>
                     <InputField
                         required="true"
@@ -79,7 +86,7 @@ class InputForm extends React.Component {
                         onLocationChange={this.props.onLocationChange}
                     />
                     <br/>
-                    <Button className="input-form-element">
+                    <Button className="input-form-element" type="submit" variant="contained" color="primary" disabled={!this.validInput()}>
                         Calculate Route
                     </Button>
                 </FormGroup>
