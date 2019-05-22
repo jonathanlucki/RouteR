@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import Input from './views/Input.js';
+import Loading from './views/Loading.js';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 class App extends React.Component {
@@ -33,6 +34,7 @@ class App extends React.Component {
 
     //handles location submission
     async handleLocationSubmit(event) {
+        this.handleViewChange('loading');
         event.preventDefault();
         const response = await fetch('/api/calculate-route', {
             method: 'POST',
@@ -44,7 +46,7 @@ class App extends React.Component {
         const result = await response.text();
         if (result !== 'error') {
             this.setState({route: result});
-            //this.handleViewChange('map');
+            this.handleViewChange('map');
         } else {
             this.handleViewChange('error');
         }
@@ -59,7 +61,7 @@ class App extends React.Component {
                 var page = <Input locations={this.state.locations} onLocationChange={this.handleLocationChange} onSubmit={this.handleLocationSubmit}/>;
                 break;
             case 'loading':
-
+                var page = <Loading />;
                 break;
             case 'map':
 
