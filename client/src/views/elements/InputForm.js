@@ -41,6 +41,7 @@ class InputForm extends React.Component {
                     id={"point"+num}
                     type="point"
                     num={num}
+                    key={num}
                     label={text}
                     locations={this.props.locations}
                     onLocationChange={this.props.onLocationChange}
