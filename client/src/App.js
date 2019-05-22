@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Input from './views/Input.js';
 import Loading from './views/Loading.js';
+import Error from './views/Error.js';
 import CssBaseline from '@material-ui/core/CssBaseline';
 
 class App extends React.Component {
@@ -67,7 +68,7 @@ class App extends React.Component {
 
                 break;
             case 'error':
-
+                var page = <Error />;
                 break;
             default:
 
