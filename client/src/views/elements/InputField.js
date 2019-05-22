@@ -64,7 +64,6 @@ class InputField extends React.Component {
                         <TextField
                             {...getInputProps({
                                 className: "input-form-element",
-                                required: this.props.required,
                                 id: this.props.id,
                                 label: this.props.label,
                                 margin: "normal"

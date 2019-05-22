@@ -68,7 +68,6 @@ class InputForm extends React.Component {
             <form onSubmit={this.props.onSubmit}>
                 <FormGroup>
                     <InputField
-                        required="true"
                         id="start"
                         type="start"
                         num={null}
