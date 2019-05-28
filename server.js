@@ -38,11 +38,11 @@ function getTravelTimeMatrix(addressArray, callback) {
     }, function(err, response) {
         if (!err) {
             //successful response
-            console.log(response.json);
+            console.log('Maps API Response: ' + response.json);
             callback(formatTimeMatrix(response.json));
         } else {
             //error
-            console.log(err);
+            console.log('Error: ' + err);
             callback('error');
         }
     });
