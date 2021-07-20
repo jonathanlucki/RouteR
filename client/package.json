@@ -6,7 +6,7 @@
     "@material-ui/core": "^3.9.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-native": "^0.59.8",
+    "react-native": "^0.62.3",
     "react-places-autocomplete": "^7.2.1",
     "react-scripts": "3.0.1",
     "typeface-roboto": "^0.0.54"
